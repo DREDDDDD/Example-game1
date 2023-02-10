@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterInteractable : Interactable
 {
+    
     public Text Dialogue;
     public string[] dialogueOptions = new string[]
     {
