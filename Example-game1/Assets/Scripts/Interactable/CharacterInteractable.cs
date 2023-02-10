@@ -15,6 +15,10 @@ public class CharacterInteractable : Interactable
         
 
     }
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        Dialogue.gameObject.SetActive(false);
+    }
     // Start is called before the first frame update
     void Start()
     {
