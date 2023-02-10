@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ItemInteractable : Interactable
 {
-    
+    public Renderer objectRenderer;
+    public Color newColor;
    public override void Interact()
     {
         base.Interact();
         Destroy(gameObject);
+        objectRenderer.material.color = newColor;
     }
     
     // Start is called before the first frame update

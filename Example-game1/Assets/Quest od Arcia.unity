@@ -1001,18 +1001,8 @@ MonoBehaviour:
   OnInteractDo:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1377492199}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      - {m_Target: {fileID: 1377492199}, m_TargetAssemblyTypeName: , m_MethodName: , m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: , m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
 --- !u!1001 &1535231949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1242,19 +1232,38 @@ MonoBehaviour:
   OnInteractDo:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1650667851}
-        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+      - {m_Target: {fileID: 1650667851}, m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine, m_MethodName: , m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
+  newSprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+--- !u!114 &1650667856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650667848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc28d21583b9b854d9a1a1c01b2b6b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteractDo:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2053580057}
+        m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  newSprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  objectRenderer: {fileID: 2053580062}
+  newColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
 --- !u!1001 &1875636299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1495,3 +1504,13 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1876627474852636122, guid: 47f5cf56a8a9a0843ba385a69a770bb3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47f5cf56a8a9a0843ba385a69a770bb3, type: 3}
+--- !u!1 &2053580057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7426001462427047579, guid: d76f42f68ef0e8e4882c66119e811f28, type: 3}
+  m_PrefabInstance: {fileID: 1306314961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2053580062 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7426001462427047578, guid: d76f42f68ef0e8e4882c66119e811f28, type: 3}
+  m_PrefabInstance: {fileID: 1306314961}
+  m_PrefabAsset: {fileID: 0}
