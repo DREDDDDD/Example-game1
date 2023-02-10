@@ -10,7 +10,10 @@ public class ItemInteractable : Interactable
     {
         base.Interact();
         Destroy(gameObject);
-        objectRenderer.material.color = newColor;
+        if(objectRenderer != null)
+        {
+            objectRenderer.material.color = newColor;
+        }
     }
     
     // Start is called before the first frame update
