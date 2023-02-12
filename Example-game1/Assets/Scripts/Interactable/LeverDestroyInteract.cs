@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LeverDestroyInteract : Interactable
 {
 
-    public new Text ItemBreakDialogue;
+    public Text ItemBreakDialogue;
     public override void Interact()
     {
         OnInteractDo.Invoke();

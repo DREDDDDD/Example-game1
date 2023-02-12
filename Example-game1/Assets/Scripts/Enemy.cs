@@ -2,13 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : Character
 {
+    
     public void AttackPlayer(Player player)
     {
-        player.CurrentHealth -= Attack;
-        AlreadyMoved = true;
-        Debug.Log("Player got Attacked");
+        if (player.isDefending)
+        {
+            Debug.Log("Player got attacked while defending");
+            player.CurrentHealth -= Attack * 0.3f;
+            AlreadyMoved = true;
+        }
+        else
+        {
+            Debug.Log("Player got attacked, and was not defending");
+            player.CurrentHealth -= Attack;
+            AlreadyMoved = true;
+        }
+       
+
     }
     // Start is called before the first frame update
     void Start()

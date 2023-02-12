@@ -7,9 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player2 Cape
+  m_Name: Player Helmet
   m_Shader: {fileID: 4800000, guid: 9ab6185bd0c2d2e469096d7ecfdeda30, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - ETC1_EXTERNAL_ALPHA
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -29,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorMask:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8fc5669f6227c244db33b31511a245ee, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -89,8 +90,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color3: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color1: {r: 0.5882353, g: 0.51903117, b: 0.51903117, a: 1}
+    - _Color2: {r: 0.08385596, g: 0.24264705, b: 0.16435729, a: 1}
+    - _Color3: {r: 0.49264705, g: 0.24632353, b: 0.36571166, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

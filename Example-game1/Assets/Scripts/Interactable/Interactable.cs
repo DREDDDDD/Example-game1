@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Interactable : MonoBehaviour
 {
     public UnityEvent OnInteractDo;
+
     public virtual void Interact()
     {
         OnInteractDo.Invoke();

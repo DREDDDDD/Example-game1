@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player2 Gloves
+  m_Name: Player Pants
   m_Shader: {fileID: 4800000, guid: 9ab6185bd0c2d2e469096d7ecfdeda30, type: 3}
   m_ValidKeywords:
   - ETC1_EXTERNAL_ALPHA
@@ -30,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorMask:
-        m_Texture: {fileID: 2800000, guid: 853bc430342951849ab8c99ae9332a50, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1c1109377ce42c942b14a3e875646515, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -90,8 +90,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color3: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color1: {r: 0.28676468, g: 0.21737589, b: 0.14759947, a: 1}
+    - _Color2: {r: 0.49264705, g: 0.24632353, b: 0.36571166, a: 1}
+    - _Color3: {r: 0.08385596, g: 0.24264705, b: 0.16435729, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

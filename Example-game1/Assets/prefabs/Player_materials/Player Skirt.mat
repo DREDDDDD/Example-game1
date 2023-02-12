@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player2 Skirt
+  m_Name: Player Skirt
   m_Shader: {fileID: 4800000, guid: 9ab6185bd0c2d2e469096d7ecfdeda30, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -89,8 +89,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color3: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color1: {r: 0.6388341, g: 0.5296821, b: 0.74264705, a: 1}
+    - _Color2: {r: 0.7609496, g: 0.8455882, b: 0.6777141, a: 1}
+    - _Color3: {r: 0.6388341, g: 0.5296821, b: 0.74264705, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

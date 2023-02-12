@@ -8,7 +8,6 @@ public class FightManager : MonoBehaviour
     public List<Enemy> enemies;
     public GameObject panel;
 
-
     public void Attack()
     {
         Debug.Log("Player Attacked");
@@ -17,6 +16,7 @@ public class FightManager : MonoBehaviour
     {
         Debug.Log("Player Defending");
         player.AlreadyMoved = true;
+        player.isDefending = true;
         EndPlayerTurn();
 
         
@@ -65,6 +65,7 @@ public class FightManager : MonoBehaviour
     {
         Debug.Log("Starting player turn");
         panel.SetActive(true);
+        player.isDefending = false;
         
     }
     private void StartEnemyTurn(Enemy enemy)

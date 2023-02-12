@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player2 Face
+  m_Name: Player Face
   m_Shader: {fileID: 4800000, guid: bc4d7f77dcf5ea14ea4393f61c9fa1ee, type: 3}
   m_ValidKeywords:
   - ETC1_EXTERNAL_ALPHA
