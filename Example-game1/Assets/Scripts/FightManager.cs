@@ -7,10 +7,14 @@ public class FightManager : MonoBehaviour
     public Player player;
     public List<Enemy> enemies;
     public GameObject panel;
+    
 
     public void Attack()
     {
         Debug.Log("Player Attacked");
+        player.AlreadyMoved = true;
+        player.AttackEnemy(enemies[0]);
+        EndPlayerTurn();
     }
     public void Defend()
     {
@@ -21,6 +25,9 @@ public class FightManager : MonoBehaviour
 
         
     }
+
+    
+    
 
     private bool CheckWinCondition()
     {
@@ -35,17 +42,19 @@ public class FightManager : MonoBehaviour
         return true;
         
     }
+
     private bool CheckLoseCondition()
     {
         Debug.Log("Checking lose condition");
         if (!player.Dead)
         {
-            return false ;
+            return false;
         }
-        return true ;
+        return true;
         
     }
     
+
 
     private void StartNewTurn()
     {
@@ -72,20 +81,35 @@ public class FightManager : MonoBehaviour
     {
         Debug.Log("Starting enemy turn");
         enemy.AttackPlayer(player);
-        StartNewTurn();
+        if (CheckLoseCondition())
+        {
+            Debug.Log("Player dead, you lose!");
+            return;
+            
+        }
+        else StartNewTurn();
        
     }
     private void EndPlayerTurn()
     {
         Debug.Log("Ending player turn");
         panel.SetActive(false);
-        StartNewTurn();
+        if (CheckWinCondition())
+        {
+            Debug.Log("Enemy dead, you win!");
+            return;
+            
+        }
+        else StartNewTurn();
         
     }
     public void StartFight()
     {
         StartNewTurn();
     }
+   
+    
+
 
 
 

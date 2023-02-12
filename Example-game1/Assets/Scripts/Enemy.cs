@@ -12,17 +12,28 @@ public class Enemy : Character
         {
             Debug.Log("Player got attacked while defending");
             player.CurrentHealth -= Attack * 0.3f;
+            if (player.CurrentHealth <= 0)
+            {
+                
+                player.Dead = true;
+            }
             AlreadyMoved = true;
         }
         else
         {
             Debug.Log("Player got attacked, and was not defending");
             player.CurrentHealth -= Attack;
+            if (player.CurrentHealth <= 0)
+            {
+                Dead = true;
+            }
             AlreadyMoved = true;
         }
        
 
     }
+   
+   
     // Start is called before the first frame update
     void Start()
     {
