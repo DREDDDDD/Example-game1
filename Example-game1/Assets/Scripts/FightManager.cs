@@ -61,6 +61,32 @@ public class FightManager : MonoBehaviour
     private void StartNewTurn()
     {
         Debug.Log("Starting new turn");
+        if (EveryoneFinished())//jezeli wszyscy skonczyli 
+        {
+            //odswiezamy ruch
+            enemies[0].AlreadyMoved = false;
+            player.AlreadyMoved = false;
+        }
+
+        DecideTurnOrder();//rozdajemy tury w odpowiedniej kolejnosci
+    }
+
+    private bool EveryoneFinished()
+    {
+        if (player.AlreadyMoved)
+        {
+            if (enemies[0].AlreadyMoved)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void DecideTurnOrder()
+    {
+        //proownujemy incijatywy
+        //ponizsze rozwiazanie jest tylko chwilowe i player zawsze ma pierwszenstwo nad przeciwnikiem
         if (player.AlreadyMoved)
         {
             if (!enemies[0].AlreadyMoved)
@@ -69,14 +95,13 @@ public class FightManager : MonoBehaviour
             }
         }
         else StartPlayerTurn();
-        panel.SetActive(true);
-        enemies[0].AlreadyMoved = false;
     }
+
     private void StartPlayerTurn()
     {
         Debug.Log("Starting player turn");
         player.isDefending = false;
-        
+        panel.SetActive(true);
     }
     private void StartEnemyTurn(Enemy enemy)
     {
