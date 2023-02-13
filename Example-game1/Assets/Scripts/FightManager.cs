@@ -8,6 +8,8 @@ public class FightManager : MonoBehaviour
     public List<Enemy> enemies;
     public GameObject panel;
     
+    
+    
 
     public void Attack()
     {
@@ -53,42 +55,41 @@ public class FightManager : MonoBehaviour
         return true;
         
     }
-    
+
 
 
     private void StartNewTurn()
     {
         Debug.Log("Starting new turn");
-
         if (player.AlreadyMoved)
         {
             if (!enemies[0].AlreadyMoved)
             {
                 StartEnemyTurn(enemies[0]);
             }
-            
         }
         else StartPlayerTurn();
+        panel.SetActive(true);
+        enemies[0].AlreadyMoved = false;
     }
     private void StartPlayerTurn()
     {
         Debug.Log("Starting player turn");
-        panel.SetActive(true);
         player.isDefending = false;
         
     }
     private void StartEnemyTurn(Enemy enemy)
     {
+        
         Debug.Log("Starting enemy turn");
         enemy.AttackPlayer(player);
         if (CheckLoseCondition())
         {
-            Debug.Log("Player dead, you lose!");
+            Debug.Log("Player dead, you lost");
             return;
-            
         }
         else StartNewTurn();
-       
+
     }
     private void EndPlayerTurn()
     {
@@ -102,7 +103,9 @@ public class FightManager : MonoBehaviour
         }
         else StartNewTurn();
         
+        
     }
+    
     public void StartFight()
     {
         StartNewTurn();

@@ -1580,7 +1580,7 @@ MonoBehaviour:
   CurrentHealth: 10
   MaxHealth: 10
   Armor: 0
-  Attack: 10
+  Attack: 4
   AlreadyMoved: 0
   Dead: 0
   player: {fileID: 0}
@@ -1880,11 +1880,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4548f3b24eee5404a99b5f31e9dc463d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Incentive: 5
+  Incentive: 10
   CurrentHealth: 10
   MaxHealth: 10
   Armor: 0
-  Attack: 10
+  Attack: 4
   AlreadyMoved: 0
   Dead: 0
 --- !u!4 &1570976888
@@ -1921,7 +1921,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650667848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9abe906bef8fc95408edfdc0914defb5, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1650667856

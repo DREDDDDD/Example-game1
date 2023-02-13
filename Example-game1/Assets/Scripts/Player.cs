@@ -14,7 +14,6 @@ public class Player : Character
         enemy.CurrentHealth -= Attack;
         if(enemy.CurrentHealth <= 0)
         {
-            Debug.Log("Enemy dies");
             enemy.Dead = true;
         }
         AlreadyMoved = true;

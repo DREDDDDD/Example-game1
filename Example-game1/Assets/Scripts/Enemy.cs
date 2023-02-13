@@ -11,13 +11,14 @@ public class Enemy : Character
         if (player.isDefending)
         {
             Debug.Log("Player got attacked while defending");
-            player.CurrentHealth -= Attack * 0.3f;
+            player.CurrentHealth -= Attack * 0.5f;
             if (player.CurrentHealth <= 0)
             {
                 
                 player.Dead = true;
             }
             AlreadyMoved = true;
+            
         }
         else
         {
