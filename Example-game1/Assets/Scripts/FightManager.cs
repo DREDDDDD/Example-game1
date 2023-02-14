@@ -7,9 +7,7 @@ public class FightManager : MonoBehaviour
     public Player player;
     public List<Enemy> enemies;
     public GameObject panel;
-    
-    
-    
+   
 
     public void Attack()
     {
@@ -33,8 +31,8 @@ public class FightManager : MonoBehaviour
 
     private bool CheckWinCondition()
     {
-        Debug.Log("Checking win condition");
-        foreach (Enemy enemy in enemies)
+        Debug.Log("Checking win condition");    //sprawdzamy WinCondition, Dla ka¿dego enemy w Klasie Enemy z listy enemies[] sprawdza czy jest martwy
+        foreach (Enemy enemy in enemies)        //jeœli tak, zwraca true jeœli enemy nie jest dead zwraca false
         {
             if (!enemy.Dead)
             {
@@ -47,8 +45,8 @@ public class FightManager : MonoBehaviour
 
     private bool CheckLoseCondition()
     {
-        Debug.Log("Checking lose condition");
-        if (!player.Dead)
+        Debug.Log("Checking lose condition"); //sprawdzamy LoseCondition, jeœli player nie jest dead, zwraca false
+        if (!player.Dead)                     //a jeœli jest zaznaczony Dead to zwraca true
         {
             return false;
         }
@@ -85,17 +83,39 @@ public class FightManager : MonoBehaviour
 
     private void DecideTurnOrder()
     {
-        //proownujemy incijatywy
-        //ponizsze rozwiazanie jest tylko chwilowe i player zawsze ma pierwszenstwo nad przeciwnikiem
-        if (player.AlreadyMoved)
+        if (player.AlreadyMoved && enemies[0].AlreadyMoved)
         {
-            if (!enemies[0].AlreadyMoved)
+            StartNewTurn();
+            return;
+        }
+
+        // Compare incentives of player and enemy
+        if (player.Incentive >= enemies[0].Incentive)
+        {
+            // Player goes first
+            if (player.AlreadyMoved)
+            {
+                StartEnemyTurn(enemies[0]);
+            }
+            else
+            {
+                StartPlayerTurn();
+            }
+        }
+        else
+        {
+            // Enemy goes first
+            if (enemies[0].AlreadyMoved)
+            {
+                StartPlayerTurn();
+            }
+            else
             {
                 StartEnemyTurn(enemies[0]);
             }
         }
-        else StartPlayerTurn();
     }
+
 
     private void StartPlayerTurn()
     {

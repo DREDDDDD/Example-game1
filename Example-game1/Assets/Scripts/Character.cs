@@ -11,7 +11,8 @@ public class Character : MonoBehaviour
     public float Attack;
     public bool AlreadyMoved;
     public bool Dead;
-   
+    
+
 
     // Start is called before the first frame update
     void Start()

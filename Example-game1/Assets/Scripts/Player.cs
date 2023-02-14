@@ -10,6 +10,10 @@ public class Player : Character
 
     public void AttackEnemy(Enemy enemy)
     {
+        if(enemy == null)
+        {
+            return;
+        }
        
         enemy.CurrentHealth -= Attack;
         if(enemy.CurrentHealth <= 0)
@@ -18,6 +22,7 @@ public class Player : Character
         }
         AlreadyMoved = true;
     }
+    
     
 
     // Start is called before the first frame update

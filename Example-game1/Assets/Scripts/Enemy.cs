@@ -26,7 +26,7 @@ public class Enemy : Character
             player.CurrentHealth -= Attack;
             if (player.CurrentHealth <= 0)
             {
-                Dead = true;
+                player.Dead = true;
             }
             AlreadyMoved = true;
         }
