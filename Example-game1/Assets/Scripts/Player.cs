@@ -6,7 +6,10 @@ using UnityEngine;
 public class Player : Character
 {
     public Player player;
+    public FightManager fightManager;
     public bool isDefending;
+    public bool canMove = true;
+    
 
     public void AttackEnemy(Enemy enemy)
     {

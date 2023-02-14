@@ -7,6 +7,10 @@ public class FightManager : MonoBehaviour
     public Player player;
     public List<Enemy> enemies;
     public GameObject panel;
+    public PlayerController playerController;
+    
+    
+    
    
 
     public void Attack()
@@ -26,7 +30,7 @@ public class FightManager : MonoBehaviour
         
     }
 
-    
+
     
 
     private bool CheckWinCondition()
@@ -131,6 +135,7 @@ public class FightManager : MonoBehaviour
         if (CheckLoseCondition())
         {
             Debug.Log("Player dead, you lost");
+            player.canMove = true;
             return;
         }
         else StartNewTurn();
@@ -143,6 +148,7 @@ public class FightManager : MonoBehaviour
         if (CheckWinCondition())
         {
             Debug.Log("Enemy dead, you win!");
+            player.canMove = true;
             return;
             
         }
@@ -153,21 +159,12 @@ public class FightManager : MonoBehaviour
     
     public void StartFight()
     {
+        player.canMove = false;
         StartNewTurn();
     }
-   
     
-
-
-
-
-
-
-
-
-
-
-
+    
+    
 
 
 
@@ -178,6 +175,7 @@ public class FightManager : MonoBehaviour
     {
         
     }
+
 
     // Update is called once per frame
     void Update()

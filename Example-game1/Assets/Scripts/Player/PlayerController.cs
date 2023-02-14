@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public Player player;
+    public FightManager fightManager;
+    
+    
     
 
     private Rigidbody2D rb;
@@ -17,8 +21,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveVelocity = moveInput.normalized * speed;
+        if (player.canMove)
+        {
+            Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            moveVelocity = moveInput.normalized * speed;
+        }
+        else
+        {
+            moveVelocity = Vector2.zero;
+        }
+        
+        
     }
     private void FixedUpdate()
     {
