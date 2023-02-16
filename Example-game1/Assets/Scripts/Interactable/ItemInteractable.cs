@@ -5,15 +5,15 @@ using UnityEngine;
 public class ItemInteractable : Interactable
 {
     public Renderer objectRenderer;
-    public Color newColor;
+    public Item item;
+    
    public override void Interact()
     {
         base.Interact();
-        Destroy(gameObject);
-        if(objectRenderer != null)
-        {
-            objectRenderer.material.color = newColor;
-        }
+        ItemManager.Instance.OnItemPickup(item);
+        gameObject.SetActive(false);
+        transform.SetParent(ItemManager.Instance.transform);
+        
     }
     
     // Start is called before the first frame update

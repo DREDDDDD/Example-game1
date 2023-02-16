@@ -9,6 +9,7 @@ public class Player : Character
     public FightManager fightManager;
     public bool isDefending;
     public bool canMove = true;
+    //public GameObject cape;
     
 
     public void AttackEnemy(Enemy enemy)
@@ -25,13 +26,17 @@ public class Player : Character
         }
         AlreadyMoved = true;
     }
+    public void EquipCape()
+    {
+        //cape.SetActive(true);
+    }
     
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //cape.SetActive(false);
     }
 
     // Update is called once per frame
