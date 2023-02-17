@@ -10,7 +10,10 @@ public class Player : Character
     public bool isDefending;
     public bool canMove = true;
     public GameObject armorBody;
-    
+    public GameObject[] boots = GameObject.("boots");
+    public GameObject gloves;
+    public GameObject helmet;
+
 
     public void AttackEnemy(Enemy enemy)
     {
@@ -38,6 +41,12 @@ public class Player : Character
     void Start()
     {
         armorBody.SetActive(false);
+        helmet.SetActive(false);
+        gloves.SetActive(false);
+        foreach(GameObject g in boots)
+        {
+            g.SetActive(false);
+        }
     }
 
     // Update is called once per frame

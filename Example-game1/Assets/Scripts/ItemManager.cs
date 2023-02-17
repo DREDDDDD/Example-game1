@@ -18,25 +18,23 @@ public class ItemManager : MonoBehaviourSingleton<ItemManager>
            
         }
         Debug.Log("All items cost" + gold);
-        if (item.label == "Armor")
+        switch (item.label)
         {
-            player.EquipArmor();
-        }
-        if (item.label == "Helmet")
-        {
-            //player.EquipHelmet();
-        }
-        if (item.label == "Gloves")
-        {
-            //player.EquipGloves();
-        }
-        if (item.label == "Boots")
-        {
-            //player.EquipBoots();
-        }
-        if (item.label == "Sword")
-        {
-            //player.EquipSword();
+            case"Armor":
+               // player.EquipArmor();
+                break;
+            case "Helmet":
+               // player.EquipHelmet();
+                break;
+            case "boots":
+               // player.EquipGloves();
+                break;
+            case "Boots":
+               // player.EquipBoots();
+                break;
+            case "Sword":
+                //player.EquipSword();
+                break;
         }
        
 
