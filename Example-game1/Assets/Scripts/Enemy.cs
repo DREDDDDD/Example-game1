@@ -23,7 +23,17 @@ public class Enemy : Character
         else
         {
             Debug.Log("Player got attacked, and was not defending");
+            Attack = Attack - player.Armor;
+            if(Attack < player.Armor)
+            {
+                Attack = 0;
+            }
             player.CurrentHealth -= Attack;
+            
+            if(player.Armor >= Attack)
+            {
+                Attack = 0;
+            }
             if (player.CurrentHealth <= 0)
             {
                 player.Dead = true;
