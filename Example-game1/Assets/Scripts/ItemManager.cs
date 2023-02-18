@@ -18,24 +18,7 @@ public class ItemManager : MonoBehaviourSingleton<ItemManager>
            
         }
         Debug.Log("All items cost" + gold);
-        switch (item.label)
-        {
-            case"Armor":
-               // player.EquipArmor();
-                break;
-            case "Helmet":
-               // player.EquipHelmet();
-                break;
-            case "boots":
-               // player.EquipGloves();
-                break;
-            case "Boots":
-               // player.EquipBoots();
-                break;
-            case "Sword":
-                //player.EquipSword();
-                break;
-        }
+       
        
 
     }

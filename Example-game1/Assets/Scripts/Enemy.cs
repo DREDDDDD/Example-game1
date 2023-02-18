@@ -5,13 +5,23 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    
+    private float ReducedAttack;
     public void AttackPlayer(Player player)
     {
         if (player.isDefending)
         {
             Debug.Log("Player got attacked while defending");
-            player.CurrentHealth -= Attack * 0.5f;
+            
+            if (Attack < player.Armor)
+            {
+                Attack = 0;
+            }
+            ReducedAttack = Attack - player.Armor;
+            player.CurrentHealth -= ReducedAttack * 0.5f;
+            
+
+
+
             if (player.CurrentHealth <= 0)
             {
                 
@@ -23,17 +33,15 @@ public class Enemy : Character
         else
         {
             Debug.Log("Player got attacked, and was not defending");
-            Attack = Attack - player.Armor;
-            if(Attack < player.Armor)
-            {
-                Attack = 0;
-            }
-            player.CurrentHealth -= Attack;
             
-            if(player.Armor >= Attack)
+            if (Attack < player.Armor)
             {
                 Attack = 0;
             }
+            ReducedAttack = Attack - player.Armor;
+            player.CurrentHealth -= ReducedAttack;
+            
+            
             if (player.CurrentHealth <= 0)
             {
                 player.Dead = true;

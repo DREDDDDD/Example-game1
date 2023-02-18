@@ -9,10 +9,7 @@ public class Player : Character
     public FightManager fightManager;
     public bool isDefending;
     public bool canMove = true;
-    public GameObject armorBody;
-    public GameObject[] boots = GameObject.("boots");
-    public GameObject gloves;
-    public GameObject helmet;
+   
 
 
     public void AttackEnemy(Enemy enemy)
@@ -30,23 +27,14 @@ public class Player : Character
         AlreadyMoved = true;
     }
     
-    public void EquipArmor()
-    {
-        armorBody.SetActive(true);
-    }
+    
     
     
 
     // Start is called before the first frame update
     void Start()
     {
-        armorBody.SetActive(false);
-        helmet.SetActive(false);
-        gloves.SetActive(false);
-        foreach(GameObject g in boots)
-        {
-            g.SetActive(false);
-        }
+        
     }
 
     // Update is called once per frame

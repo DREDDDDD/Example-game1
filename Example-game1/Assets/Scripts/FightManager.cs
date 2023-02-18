@@ -8,6 +8,7 @@ public class FightManager : MonoBehaviour
     public List<Enemy> enemies;
     public GameObject panel;
     public PlayerController playerController;
+    public Enemy enemy;
     
     
     
@@ -159,8 +160,25 @@ public class FightManager : MonoBehaviour
     
     public void StartFight()
     {
-        player.canMove = false;
-        StartNewTurn();
+        
+        foreach (Enemy enemy in enemies)       
+        {
+            if (!enemy.Dead)
+            {
+                player.canMove = false;
+                StartNewTurn();
+            }
+            else
+            {
+                Debug.Log("All enemies dead!");
+                return;
+            }
+        }
+        
+        
+        
+            
+        
     }
     
     
