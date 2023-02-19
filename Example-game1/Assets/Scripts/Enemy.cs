@@ -11,12 +11,11 @@ public class Enemy : Character
         if (player.isDefending)
         {
             Debug.Log("Player got attacked while defending");
-            
-            if (Attack < player.Armor)
-            {
-                Attack = 0;
-            }
             ReducedAttack = Attack - player.Armor;
+            if (ReducedAttack <= 0)
+            {
+                ReducedAttack = 0;
+            }
             player.CurrentHealth -= ReducedAttack * 0.5f;
             
 
@@ -33,12 +32,11 @@ public class Enemy : Character
         else
         {
             Debug.Log("Player got attacked, and was not defending");
-            
-            if (Attack < player.Armor)
-            {
-                Attack = 0;
-            }
             ReducedAttack = Attack - player.Armor;
+            if (ReducedAttack <= 0)
+            {
+                ReducedAttack=0;
+            }
             player.CurrentHealth -= ReducedAttack;
             
             
