@@ -7,34 +7,43 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Player player;
     public FightManager fightManager;
-    
-    
-    
-
+    private Animator animator;
     private Rigidbody2D rb;
-    private Vector2 moveVelocity;
+    private Vector3 change;
 
     private void Start()
     {
-        rb= GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         if (player.canMove)
         {
-            Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            moveVelocity.x = Mathf.Clamp(moveInput.x, -1f, 1f) * speed; // Only allow movement along X axis
-            moveVelocity.y = Mathf.Clamp(moveInput.y, -1f, 1f) * speed; // Only allow movement along Y axis
+            change = Vector3.zero;
+            change.x = Input.GetAxisRaw("Horizontal");
+            change.y = Input.GetAxisRaw("Vertical");
+
+            if (change != Vector3.zero)
+            {
+                animator.SetFloat("moveX", change.x);
+                animator.SetFloat("moveY", change.y);
+                animator.SetBool("moving", true);
+            }
+            else animator.SetBool("moving", false);
+            
+            
+            
         }
         else
         {
-            moveVelocity = Vector2.zero;
+            change = Vector3.zero;
         }
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + change * speed * Time.fixedDeltaTime);
     }
 
 }
