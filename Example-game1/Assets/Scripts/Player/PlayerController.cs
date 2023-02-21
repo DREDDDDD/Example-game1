@@ -24,14 +24,13 @@ public class PlayerController : MonoBehaviour
         if (player.canMove)
         {
             Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            moveVelocity = moveInput.normalized * speed;
+            moveVelocity.x = Mathf.Clamp(moveInput.x, -1f, 1f) * speed; // Only allow movement along X axis
+            moveVelocity.y = Mathf.Clamp(moveInput.y, -1f, 1f) * speed; // Only allow movement along Y axis
         }
         else
         {
             moveVelocity = Vector2.zero;
         }
-        
-        
     }
     private void FixedUpdate()
     {
