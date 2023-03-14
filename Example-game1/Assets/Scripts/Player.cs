@@ -9,8 +9,13 @@ public class Player : Character
     public FightManager fightManager;
     public bool isDefending;
     public bool canMove = true;
-   
+    
+    internal Vector3 position;
 
+    public Player(Vector3 position)
+    {
+        this.position = position;
+    }
 
     public void AttackEnemy(Enemy enemy)
     {

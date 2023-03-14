@@ -9,10 +9,17 @@ public class FightManager : MonoBehaviour
     public GameObject panel;
     public PlayerController playerController;
     public Enemy enemy;
+    public GameObject MainCamera;
+    public GameObject BattleCamera;
+    public GameObject EnemyBattleSpot;
+    public GameObject PlayerBattleSpot;
+    public Transform PositionPlaceHolder;
     
     
+
+
     
-   
+    
 
     public void Attack()
     {
@@ -30,6 +37,7 @@ public class FightManager : MonoBehaviour
 
         
     }
+
 
 
     
@@ -137,6 +145,9 @@ public class FightManager : MonoBehaviour
         {
             Debug.Log("Player dead, you lost");
             player.canMove = true;
+            MainCamera.gameObject.SetActive(true);
+            BattleCamera.gameObject.SetActive(false);
+            player.transform.position = PositionPlaceHolder.position;
             return;
         }
         else StartNewTurn();
@@ -150,14 +161,18 @@ public class FightManager : MonoBehaviour
         {
             Debug.Log("Enemy dead, you win!");
             player.canMove = true;
+            MainCamera.gameObject.SetActive(true);
+            BattleCamera.gameObject.SetActive(false);
+            player.transform.position = PositionPlaceHolder.position;
             return;
-            
+
         }
         else StartNewTurn();
-        
-        
+
+
     }
-    
+
+
     public void StartFight()
     {
         
@@ -166,19 +181,36 @@ public class FightManager : MonoBehaviour
             if (!enemy.Dead)
             {
                 player.canMove = false;
+                MainCamera.gameObject.SetActive(false);
+                BattleCamera.gameObject.SetActive(true);
+                player.transform.position = new Vector2(-42f, 0.4f);
                 StartNewTurn();
             }
+            
             else
             {
                 Debug.Log("All enemies dead!");
+                MainCamera.gameObject.SetActive(true);
+                BattleCamera.gameObject.SetActive(false);
+                player.transform.position = PositionPlaceHolder.position;
                 return;
             }
         }
-        
-        
-        
-            
-        
+        if (player.Dead)
+        {
+            Debug.Log("Player is dead!");
+            panel.SetActive(false);
+            MainCamera.gameObject.SetActive(true);
+            BattleCamera.gameObject.SetActive(false);
+            player.transform.position = PositionPlaceHolder.position;
+            player.canMove = true;
+            return;
+        }
+
+
+    
+
+
     }
     
     
@@ -192,6 +224,7 @@ public class FightManager : MonoBehaviour
     void Start()
     {
         
+
     }
 
 
