@@ -175,7 +175,9 @@ public class FightManager : MonoBehaviour
 
     public void StartFight()
     {
-        
+        PositionPlaceHolder.position = player.transform.position;
+        player.controller.animator.SetFloat("moveY", -1);
+        player.controller.animator.SetFloat("moveX", 0);
         foreach (Enemy enemy in enemies)       
         {
             if (!enemy.Dead)

@@ -9,6 +9,7 @@ public class Player : Character
     public FightManager fightManager;
     public bool isDefending;
     public bool canMove = true;
+    public PlayerController controller;
     
     internal Vector3 position;
 

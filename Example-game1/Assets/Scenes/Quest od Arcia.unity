@@ -1827,7 +1827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &924074024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2326,7 +2326,6 @@ MonoBehaviour:
   EnemyBattleSpot: {fileID: 1506429068}
   PlayerBattleSpot: {fileID: 1029906639}
   PositionPlaceHolder: {fileID: 1223570335}
-  PlayerFight: {fileID: 21300000, guid: 6cc14532676951d4fbfba76331a02990, type: 3}
 --- !u!4 &1044840688
 Transform:
   m_ObjectHideFlags: 0
@@ -4465,18 +4464,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3097ad42ea008439a17eb5084b3d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1802882041}
   enemies:
   - {fileID: 1570976887}
   panel: {fileID: 843833942}
   playerController: {fileID: 1802882040}
   enemy: {fileID: 1570976887}
-  MainCamera: {fileID: 0}
-  BattleCamera: {fileID: 0}
-  EnemyBattleSpot: {fileID: 0}
-  PlayerBattleSpot: {fileID: 0}
-  PositionPlaceHolder: {fileID: 0}
-  PlayerFight: {fileID: 0}
+  MainCamera: {fileID: 767862728}
+  BattleCamera: {fileID: 924074023}
+  EnemyBattleSpot: {fileID: 1506429068}
+  PlayerBattleSpot: {fileID: 1029906639}
+  PositionPlaceHolder: {fileID: 1223570335}
 --- !u!61 &1720959526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4916,7 +4914,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: bdd6934d45b82bd4abc1c8ba6a5c4c30, type: 3}
     - target: {fileID: 9193289690133029128, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9193289690133029128, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
       propertyPath: m_SortingLayerID
@@ -4987,6 +4985,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1044840687}
     - target: {fileID: 9193289690133029133, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1802882040}
+    - target: {fileID: 9193289690133029133, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
       propertyPath: fightManager
       value: 
       objectReference: {fileID: 1044840687}
@@ -5005,6 +5007,22 @@ PrefabInstance:
     - target: {fileID: 9193289690133029134, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
       propertyPath: m_Offset.y
       value: -0.31346616
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193289690133029134, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193289690133029134, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193289690133029134, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193289690133029134, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9193289690133029135, guid: b62eeb21afc689e4799ab1e5b8e7dd4b, type: 3}
       propertyPath: m_BodyType

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Player player;
     public FightManager fightManager;
-    private Animator animator;
+    public Animator animator;
     private Rigidbody2D rb;
     private Vector3 change;
 
