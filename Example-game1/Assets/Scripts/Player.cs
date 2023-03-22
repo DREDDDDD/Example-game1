@@ -10,7 +10,8 @@ public class Player : Character
     public bool isDefending;
     public bool canMove = true;
     public PlayerController controller;
-    
+    public bool IsAttacking;
+
     internal Vector3 position;
 
     public Player(Vector3 position)

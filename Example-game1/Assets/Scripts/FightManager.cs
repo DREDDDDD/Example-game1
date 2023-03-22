@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,19 +15,28 @@ public class FightManager : MonoBehaviour
     public GameObject EnemyBattleSpot;
     public GameObject PlayerBattleSpot;
     public Transform PositionPlaceHolder;
-    
+    public GameObject fireball;
     
 
 
-    
-    
+
+
+
+
+
 
     public void Attack()
     {
         Debug.Log("Player Attacked");
+        player.IsAttacking = true;
         player.AlreadyMoved = true;
+        
+        fireball.transform.position = player.transform.position;
+        fireball.GetComponent<FireballScript>().target = enemy.transform;
+ 
         player.AttackEnemy(enemies[0]);
         EndPlayerTurn();
+        
     }
     public void Defend()
     {
