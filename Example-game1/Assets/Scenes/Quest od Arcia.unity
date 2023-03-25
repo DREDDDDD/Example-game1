@@ -2193,6 +2193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireball
       objectReference: {fileID: 0}
+    - target: {fileID: 6966093288159918345, guid: fa17618e90825ca4d8f7c573bf053325, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6966093288159918347, guid: fa17618e90825ca4d8f7c573bf053325, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -2402,7 +2406,7 @@ MonoBehaviour:
   EnemyBattleSpot: {fileID: 1506429068}
   PlayerBattleSpot: {fileID: 1029906639}
   PositionPlaceHolder: {fileID: 1223570335}
-  fireball: {fileID: 0}
+  fireball: {fileID: 975923199}
 --- !u!4 &1044840688
 Transform:
   m_ObjectHideFlags: 0

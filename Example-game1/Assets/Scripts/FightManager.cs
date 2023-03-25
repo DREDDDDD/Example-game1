@@ -30,10 +30,10 @@ public class FightManager : MonoBehaviour
         Debug.Log("Player Attacked");
         player.IsAttacking = true;
         player.AlreadyMoved = true;
-        
+        fireball.SetActive(true);
         fireball.transform.position = player.transform.position;
         fireball.GetComponent<FireballScript>().target = enemy.transform;
- 
+        
         player.AttackEnemy(enemies[0]);
         EndPlayerTurn();
         
@@ -243,6 +243,9 @@ public class FightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (fireball.transform.position == enemy.transform.position)
+        {
+            fireball.SetActive(false);
+        }
     }
 }
