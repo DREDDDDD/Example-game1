@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FightManager : MonoBehaviour
+public class FightManager : MonoBehaviourSingleton<FightManager>
 {
     public Player player;
     public List<Enemy> enemies;
@@ -16,6 +16,7 @@ public class FightManager : MonoBehaviour
     public GameObject PlayerBattleSpot;
     public Transform PositionPlaceHolder;
     public GameObject fireball;
+    
     
 
 
@@ -33,9 +34,9 @@ public class FightManager : MonoBehaviour
         fireball.SetActive(true);
         fireball.transform.position = player.transform.position;
         fireball.GetComponent<FireballScript>().target = enemy.transform;
+        fireball.GetComponent<FireballScript>().once = true;
         
-        player.AttackEnemy(enemies[0]);
-        EndPlayerTurn();
+        
         
     }
     public void Defend()
@@ -163,7 +164,7 @@ public class FightManager : MonoBehaviour
         else StartNewTurn();
 
     }
-    private void EndPlayerTurn()
+    public void EndPlayerTurn()
     {
         Debug.Log("Ending player turn");
         panel.SetActive(false);
@@ -243,9 +244,6 @@ public class FightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fireball.transform.position == enemy.transform.position)
-        {
-            fireball.SetActive(false);
-        }
+        
     }
 }

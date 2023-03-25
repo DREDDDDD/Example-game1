@@ -2262,6 +2262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1570976888}
   speed: 5
+  fireball: {fileID: 975923199}
+  once: 0
 --- !u!1 &1029906639
 GameObject:
   m_ObjectHideFlags: 0

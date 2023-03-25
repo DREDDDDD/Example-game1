@@ -6,7 +6,8 @@ public class FireballScript : MonoBehaviour
 {
     public Transform target;
     public float speed;
-
+    public bool once;
+    
 
 
 
@@ -20,6 +21,18 @@ public class FireballScript : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
+        if(Vector2.Distance(transform.position, target.position)<0.1f)
+        {
+            if (once)
+            {
+                gameObject.SetActive(false);
+                FightManager.Instance.player.AttackEnemy(FightManager.Instance.enemies[0]);
+                FightManager.Instance.EndPlayerTurn();
+                once = false;
+            }
+                
+            
+        }
+        
     }
 }
